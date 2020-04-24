@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/core/styles/';
 
 import Button from '@material-ui/core/Button';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
-import Camera from '@material-ui/icons/Camera';
+import CameraFront from '@material-ui/icons/CameraFront';
 
 
 
@@ -54,6 +54,7 @@ const { classes } = props;
         <Button variant="outlined" color="secondary" size="small" className={classes.button}>Click me, I'm secondary</Button>
         <Button className={classes.button}>Click me to get a confirmation dialogue</Button>
         <Button variant="contained" color="primary" className={classes.button}></Button>
+        <CameraFront />
         <input
         accept="image/*"
         className={classes.input}
@@ -62,12 +63,12 @@ const { classes } = props;
         type="file"
       />
       <label htmlFor="contained-button-file">
-        <Button variant="contained" component="span" className={classes.button}>
+        <Button variant="contained" color="secondary" component="span" className={classes.button}>
           Upload 
           <CloudUploadIcon className={`${props.classes.rightIcon} ${props.classes.iconSmall}`}/>
         </Button>
-        <Camera />
       </label>
+
       </div>
       
     );
