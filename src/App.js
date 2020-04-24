@@ -10,9 +10,10 @@ import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 
 
-
 const styles = theme => ({
   button: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    borderRadius: 7,
     margin: theme.spacing(1),
   },
   input: {
@@ -50,16 +51,18 @@ const { classes } = props;
           so I will make some buttons, style them with my theme, and then make confirmation dialog for them.
           Then I will try uploading images using AWS S3? or field...something
         </p>
+        <p>this upload button is a component and has state</p>
           <UploadButton classes={classes}/>
           <p>{JSON.stringify(props)}</p>
 
           <div>
-            <Button variant="contained" color="primary" size="large" className={classes.button}>Click me, I'm primary!</Button>
-            <Button variant="outlined" color="secondary" size="small" className={classes.button}>Click me, I'm secondary</Button>
+            <Button variant="contained" size="large" className={classes.button}>Click me, I'm primary!</Button>
+            <Button variant="outlined" size="small" className={classes.button}>Click me, I'm secondary</Button>
             <Button className={classes.button}>Click me to get a confirmation dialogue</Button>
-            <Button variant="contained" color="primary" className={classes.button}>Hello</Button>
+            <Button variant="contained" className={classes.button}>Hello</Button>
             <CameraFront />
           </div>
+          <p>this upload button is in a function component so it can't use state</p>
           <input
                     accept="image/*"
                     className={classes.input}
@@ -68,8 +71,8 @@ const { classes } = props;
                     type="file"
                 />
                 <label htmlFor="contained-button-file">
-                    <Button variant="contained" color="secondary" component="span" className={classes.button}>
-                        Upload 
+                    <Button variant="contained" color="secondary" component="span" >
+                        Not Really Upload 
                         <CloudUploadIcon className={`${props.classes.rightIcon} ${props.classes.iconSmall}`}/>
                     </Button>
                 </label>
