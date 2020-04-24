@@ -3,10 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 
 import { withStyles } from '@material-ui/core/styles/';
-
+import UploadButton from './UploadButton';
 import Button from '@material-ui/core/Button';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import CameraFront from '@material-ui/icons/CameraFront';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 
 
@@ -50,24 +50,30 @@ const { classes } = props;
           so I will make some buttons, style them with my theme, and then make confirmation dialog for them.
           Then I will try uploading images using AWS S3? or field...something
         </p>
-        <Button variant="contained" color="primary" size="large" className={classes.button}>Click me, I'm primary!</Button>
-        <Button variant="outlined" color="secondary" size="small" className={classes.button}>Click me, I'm secondary</Button>
-        <Button className={classes.button}>Click me to get a confirmation dialogue</Button>
-        <Button variant="contained" color="primary" className={classes.button}></Button>
-        <CameraFront />
-        <input
-        accept="image/*"
-        className={classes.input}
-        id="contained-button-file"
-        multiple
-        type="file"
-      />
-      <label htmlFor="contained-button-file">
-        <Button variant="contained" color="secondary" component="span" className={classes.button}>
-          Upload 
-          <CloudUploadIcon className={`${props.classes.rightIcon} ${props.classes.iconSmall}`}/>
-        </Button>
-      </label>
+          <UploadButton classes={classes}/>
+          <p>{JSON.stringify(props)}</p>
+
+          <div>
+            <Button variant="contained" color="primary" size="large" className={classes.button}>Click me, I'm primary!</Button>
+            <Button variant="outlined" color="secondary" size="small" className={classes.button}>Click me, I'm secondary</Button>
+            <Button className={classes.button}>Click me to get a confirmation dialogue</Button>
+            <Button variant="contained" color="primary" className={classes.button}>Hello</Button>
+            <CameraFront />
+          </div>
+          <input
+                    accept="image/*"
+                    className={classes.input}
+                    id="contained-button-file"
+                    multiple
+                    type="file"
+                />
+                <label htmlFor="contained-button-file">
+                    <Button variant="contained" color="secondary" component="span" className={classes.button}>
+                        Upload 
+                        <CloudUploadIcon className={`${props.classes.rightIcon} ${props.classes.iconSmall}`}/>
+                    </Button>
+                </label>
+       
 
       </div>
       
