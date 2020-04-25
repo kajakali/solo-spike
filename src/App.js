@@ -4,10 +4,14 @@ import './App.css';
 
 import { withStyles } from '@material-ui/core/styles/';
 import UploadButton from './UploadButton';
+import ConfirmationDialogButton from './ConfirmationDialogButton';
 import Button from '@material-ui/core/Button';
 import CameraFront from '@material-ui/icons/CameraFront';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import dotenv from 'dotenv';
 
+dotenv.config();
+console.log('Key', process.env.AWS_ACCESS_KEY_ID);
 
 
 const styles = theme => ({
@@ -56,10 +60,10 @@ const { classes } = props;
           <p>{JSON.stringify(props)}</p>
 
           <div>
-            <Button variant="contained" size="large" className={classes.button}>Click me, I'm primary!</Button>
+            <Button variant="contained" size="large" className={`uppy-select ${classes.button}`}>Click me, I'm primary uppy!</Button>
             <Button variant="outlined" size="small" className={classes.button}>Click me, I'm secondary</Button>
-            <Button className={classes.button}>Click me to get a confirmation dialogue</Button>
-            <Button variant="contained" className={classes.button}>Hello</Button>
+            <ConfirmationDialogButton classes={classes}/>
+            <Button id="select-files" variant="contained" className={classes.button}>Hello</Button>
             <CameraFront />
           </div>
           <p>this upload button is in a function component so it can't use state</p>
@@ -72,7 +76,7 @@ const { classes } = props;
                 />
                 <label htmlFor="contained-button-file">
                     <Button variant="contained" color="secondary" component="span" >
-                        Not Really Upload 
+                        Non Uppy Upload 
                         <CloudUploadIcon className={`${props.classes.rightIcon} ${props.classes.iconSmall}`}/>
                     </Button>
                 </label>
